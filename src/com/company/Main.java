@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import enumeration.ChairLegs;
 
 class Example {
 
@@ -42,20 +43,6 @@ class Example {
         }
         public void show(){
             System.out.println("Class chairFrame:\nLength: " + length + "\nWidth: " + width + "\nHeight: " + height + ".\n");
-        }
-    }
-
-    enum ChairLegs {
-        THREE(3), FOUR(4);
-        private int number;
-        ChairLegs(int i) {
-            number = i;
-        }
-        int getNumber() {
-            return number;
-        }
-        public void show(){
-            System.out.println("ENUM class chairLegs:\nnumber: " + number + ".\n");
         }
     }
 
