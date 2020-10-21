@@ -23,11 +23,17 @@ public class Manufacturer implements ShowDimensions {
         System.out.println(" Name: " + result + " \nposition: Manufacturer.\n");
     }
 
+    public int hashCode(){
+        return name.hashCode();
+    }
+
     public boolean equals(Manufacturer obj) {
-        if(this.models.length != obj.models.length) return false;
-        for(int i = 0; i < this.models.length; i++){
-            if(this.models[i].name != obj.models[i].name) return false;
+        if(this.hashCode() != obj.hashCode()) return false;
+        if(this.hashCode() == obj.hashCode()) {
+            for (int i = 0; i < this.models.length; i++) {
+                if (this.models[i].name != obj.models[i].name) return false;
+            }
         }
-        return this.name == obj.name;
+        return true;
     }
 }
