@@ -1,15 +1,21 @@
 package lab1.enumeration;
 
 public enum ChairLegs {
-    THREE(3), FOUR(4);
-    private int number;
-    ChairLegs(int i) {
-        number = i;
+    THREE("THREE", 3), FOUR("FOUR", 4);
+    private String title;
+    private int num;
+
+    ChairLegs(String word, int num) {
+        title = word;
+        this.num = num;
     }
-    int getNumber() {
-        return number;
+
+    @Override
+    public String toString() {
+        return this.title;
     }
-    public void show(){
-        System.out.println("ENUM class chairLegs:\nnumber: " + number + ".\n");
+
+    public int getNum(){
+        return num;
     }
 }

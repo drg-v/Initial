@@ -1,6 +1,6 @@
 package lab1.source;
 
-public class Seat {
+public class Seat implements ShowDimensions {
     private float height;
     private float width;
 
@@ -12,7 +12,7 @@ public class Seat {
         height = h;
         width = w;
     }
-    
+
     public void show(){
         System.out.println("Class seat:\nHeight: " + height + ".\nWidth: " + width + ".\n");
     }

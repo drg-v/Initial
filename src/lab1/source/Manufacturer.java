@@ -1,6 +1,6 @@
 package lab1.source;
 
-public class Manufacturer {
+public class Manufacturer implements ShowDimensions {
     private String name;
     private Chair[] models;
 
@@ -18,6 +18,16 @@ public class Manufacturer {
     }
 
     public void show(){
-        System.out.println("Manufacturer`s name: " + name + ".\n");
+        String result;
+        result = name.contains("Manufacturer") ? name.split(" ")[0] : name;
+        System.out.println(" Name: " + result + " \nposition: Manufacturer.\n");
+    }
+
+    public boolean equals(Manufacturer obj) {
+        if(this.models.length != obj.models.length) return false;
+        for(int i = 0; i < this.models.length; i++){
+            if(this.models[i].name != obj.models[i].name) return false;
+        }
+        return this.name == obj.name;
     }
 }

@@ -1,6 +1,6 @@
 package lab1.source;
 
-public class ChairFrame {
+public class ChairFrame implements ShowDimensions {
     private float length;
     private float width;
     private float height;

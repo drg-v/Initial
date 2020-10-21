@@ -1,23 +1,24 @@
 package lab1.source;
 
 import lab1.enumeration.ChairLegs;
+import lab1.exception.BrokenChair;
 
-public class Chair extends Furniture {
+public class Chair extends Furniture{
 
-    private class Backboard {
+    private class Backboard implements ShowDimensions {
         float height;
         float width;
 
-        Backboard(float w, float h){
+        Backboard(float w, float h) {
             height = h;
             width = w;
         }
 
-        Backboard(){
+        Backboard() {
             height = width = (float) 10;
         }
 
-        public void show(){
+        public void show() {
             System.out.println("Class backboard:\nWidth: " + width + ".\nHeight: " + height + ".\n");
         }
     }
@@ -27,6 +28,7 @@ public class Chair extends Furniture {
     ChairFrame frame;
     Seat sitting;
     Manufacturer producer;
+    boolean isBroken;
 
     public Chair(float frame_l, ChairLegs number, float frame_h, float frame_w, float seat_h, float seat_w, String Name, Manufacturer obj){
         super();
@@ -55,14 +57,28 @@ public class Chair extends Furniture {
         sitting = new Seat();
         producer = new Manufacturer(this.name + "`s Manufacturer", this);
     }
-    public void showChair(){
+
+    public void tryToBreak(){
+        int var = (int) (Math.random() * 4);
+        if(var == 3) isBroken = true;
+    }
+
+    public void showChair() throws BrokenChair {
+        tryToBreak();
+        if(isBroken) throw new BrokenChair(name + " is broken");
         System.out.println("Class Chair:\nName: " + name + ".\n");
         back.show();
-        num.show();
+        StringBuffer myStr = new StringBuffer("Class ChairLegs: ");
+        myStr.append(" String value: ");
+        myStr.append(num);
+        myStr.append(" Integer value: ");
+        myStr.append(num.getNum());
+        System.out.println(myStr);
         frame.show();
         sitting.show();
         producer.show();
     }
+
     public void setName(String Name) {
         name = Name;
     }
