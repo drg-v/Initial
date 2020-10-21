@@ -23,10 +23,11 @@ public class Manufacturer implements ShowDimensions {
         System.out.println(" Name: " + result + " \nposition: Manufacturer.\n");
     }
 
+    @Override
     public int hashCode(){
         return name.hashCode();
     }
-
+    
     public boolean equals(Manufacturer obj) {
         if(this.hashCode() != obj.hashCode()) return false;
         if(this.hashCode() == obj.hashCode()) {

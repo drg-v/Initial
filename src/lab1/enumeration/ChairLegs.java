@@ -10,6 +10,7 @@ public enum ChairLegs {
         this.num = num;
     }
 
+    @Override
     public String toString() {
         return this.title;
     }
