@@ -15,6 +15,18 @@ public class ChairFrame implements ShowDimensions {
         width = w;
     }
 
+    public float getLength(){
+        return length;
+    }
+
+    public float getWidth(){
+        return width;
+    }
+
+    public float getHeight(){
+        return height;
+    }
+
     public void show(){
         System.out.println("Class chairFrame:\nLength: " + length + "\nWidth: " + width + "\nHeight: " + height + ".\n");
     }

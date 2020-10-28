@@ -23,6 +23,13 @@ public class Manufacturer implements ShowDimensions {
         System.out.println(" Name: " + result + " \nposition: Manufacturer.\n");
     }
 
+    public String getName(){
+        return name;
+    }
+
+    public int getModelsLength(){
+        return models.length;
+    }
     @Override
     public int hashCode(){
         return name.hashCode();

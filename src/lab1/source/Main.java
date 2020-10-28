@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import lab1.enumeration.ChairLegs;
-import lab1.exception.BrokenChair;
+import lab1.source.enumeration.ChairLegs;
+import lab1.source.exception.BrokenChair;
 
 class Example {
 
@@ -19,11 +19,12 @@ class Example {
         lst.add(new Chair(60.0f, ChairLegs.THREE, 14.0f, 18.0f, 64.0f, 54.0f, "Fifth", obj));
         Iterator<Chair> chairIterator = lst.iterator();
         while (chairIterator.hasNext()) {
+            Chair cur = chairIterator.next();
             try {
-                chairIterator.next().showChair();
+                cur.showChair();
             } catch (BrokenChair brokenChair) {
                 System.out.println(brokenChair.getMessage());
-                chairIterator.remove();
+                Repair.repairChair(cur);
             } finally {
                 System.out.println("Element has been deleted.");
             }

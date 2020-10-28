@@ -13,6 +13,14 @@ public class Seat implements ShowDimensions {
         width = w;
     }
 
+    public float getHeight(){
+        return height;
+    }
+
+    public float getWidth(){
+        return width;
+    }
+
     public void show(){
         System.out.println("Class seat:\nHeight: " + height + ".\nWidth: " + width + ".\n");
     }

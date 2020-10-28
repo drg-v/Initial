@@ -1,4 +1,4 @@
-package lab1.exception;
+package lab1.source.exception;
 
 public class BrokenChair extends Exception{
     private String message;

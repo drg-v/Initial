@@ -1,7 +1,7 @@
 package lab1.source;
 
-import lab1.enumeration.ChairLegs;
-import lab1.exception.BrokenChair;
+import lab1.source.enumeration.ChairLegs;
+import lab1.source.exception.BrokenChair;
 
 public class Chair extends Furniture{
 
@@ -28,7 +28,7 @@ public class Chair extends Furniture{
     ChairFrame frame;
     Seat sitting;
     Manufacturer producer;
-    boolean isBroken;
+    public boolean isBroken;
 
     public Chair(float frame_l, ChairLegs number, float frame_h, float frame_w, float seat_h, float seat_w, String Name, Manufacturer obj){
         super();
@@ -63,6 +63,25 @@ public class Chair extends Furniture{
         if(var == 3) isBroken = true;
     }
 
+    public ChairLegs getNum(){
+        return num;
+    }
+
+    public Manufacturer getProducer(){
+        return producer;
+    }
+
+    public Seat getSitting(){
+        return sitting;
+    }
+
+    public ChairFrame getFrame(){
+        return frame;
+    }
+
+    public String getName(){
+        return name;
+    }
     public void showChair() throws BrokenChair {
         tryToBreak();
         if(isBroken) throw new BrokenChair(name + " is broken");

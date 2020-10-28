@@ -1,4 +1,4 @@
-package lab1.enumeration;
+package lab1.source.enumeration;
 
 public enum ChairLegs {
     THREE("THREE", 3), FOUR("FOUR", 4);
