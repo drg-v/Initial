@@ -30,6 +30,7 @@ public class Manufacturer implements ShowDimensions {
     public int getModelsLength(){
         return models.length;
     }
+
     @Override
     public int hashCode(){
         return name.hashCode();
