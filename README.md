@@ -1,2 +1,2 @@
-# Initial
-main class in src/com/company/Main.java
+# labs
+main class in src/Lab1/Main.java
